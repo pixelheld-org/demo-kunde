@@ -61,7 +61,7 @@ export default function Home() {
           <button
             data-edit-id="hero-cta"
             style={{
-              background: "#b89c6e",
+              background: "#2563eb",
               color: "#fff",
               padding: "15px 38px",
               border: 0,
