@@ -32,7 +32,7 @@ export default function Home() {
               marginTop: 0,
             }}
           >
-            Friseursalon · Wien
+            Hundesalon · Wien
           </p>
           <h1
             data-edit-id="hero-title"
@@ -44,7 +44,7 @@ export default function Home() {
               lineHeight: 1.1,
             }}
           >
-            Salon Demo
+            Jacopos Hundesalon
           </h1>
           <p
             data-edit-id="hero-subtitle"
@@ -56,12 +56,12 @@ export default function Home() {
               lineHeight: 1.6,
             }}
           >
-            Ihr Friseur im Herzen von Wien — Termine ohne Wartezeit.
+            Professionelle Pflege &amp; Styling für Ihren Vierbeiner — liebevoll &amp; mit Erfahrung.
           </p>
           <button
             data-edit-id="hero-cta"
             style={{
-              background: "#b89c6e",
+              background: "#2563eb",
               color: "#fff",
               padding: "15px 38px",
               border: 0,
@@ -92,8 +92,9 @@ export default function Home() {
             data-edit-id="about-text"
             style={{ lineHeight: 1.8, color: "#444", fontSize: 17, margin: 0 }}
           >
-            Seit 2015 verwöhnen wir unsere Kundinnen und Kunden mit Handwerk, Ruhe und einer
-            guten Tasse Kaffee. Klein, persönlich, ehrlich — so mögen wir es.
+            Willkommen bei Jacopos Hundesalon! Seit über 10 Jahren kümmern wir uns mit Herz
+            und Fachkenntnis um das Wohlbefinden Ihres Hundes. Jeder Hund wird bei uns
+            individuell betreut — sanft, stressfrei und mit viel Liebe zum Detail.
           </p>
         </div>
       </section>
@@ -122,7 +123,7 @@ export default function Home() {
           >
             <span style={{ fontSize: 24 }}>🕘</span>
             <p data-edit-id="hours" style={{ fontSize: 17, margin: 0, color: "#333" }}>
-              Mo–Fr 9–18 Uhr, Sa 9–13 Uhr
+              Di–Fr 9–18 Uhr, Sa 9–14 Uhr
             </p>
           </div>
         </div>
@@ -151,8 +152,8 @@ export default function Home() {
                 padding: "18px 24px",
               }}
             >
-              <span style={{ fontSize: 16, fontWeight: 600 }}>Schnitt &amp; Föhnen</span>
-              <span style={{ fontSize: 16, fontWeight: 700, color: "#b89c6e" }}>ab 49 €</span>
+              <span style={{ fontSize: 16, fontWeight: 600 }}>🐾 Baden &amp; Föhnen</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: "#b89c6e" }}>ab 35 €</span>
             </li>
             <li
               data-edit-id="price-2"
@@ -166,8 +167,8 @@ export default function Home() {
                 padding: "18px 24px",
               }}
             >
-              <span style={{ fontSize: 16, fontWeight: 600 }}>Farbe &amp; Strähnen</span>
-              <span style={{ fontSize: 16, fontWeight: 700, color: "#b89c6e" }}>ab 80 €</span>
+              <span style={{ fontSize: 16, fontWeight: 600 }}>✂️ Scheren &amp; Trimmen</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: "#b89c6e" }}>ab 55 €</span>
             </li>
             <li
               data-edit-id="price-3"
@@ -181,8 +182,8 @@ export default function Home() {
                 padding: "18px 24px",
               }}
             >
-              <span style={{ fontSize: 16, fontWeight: 600 }}>Bart &amp; Pflege</span>
-              <span style={{ fontSize: 16, fontWeight: 700, color: "#b89c6e" }}>ab 25 €</span>
+              <span style={{ fontSize: 16, fontWeight: 600 }}>🐕 Komplett-Pflege</span>
+              <span style={{ fontSize: 16, fontWeight: 700, color: "#b89c6e" }}>ab 80 €</span>
             </li>
           </ul>
         </div>
@@ -201,7 +202,7 @@ export default function Home() {
           data-edit-id="contact"
           style={{ margin: 0, fontSize: 15, lineHeight: 1.7 }}
         >
-          Demogasse 1, 1220 Wien · 01 234 56 78 · hallo@salon-demo.at
+          Hundestraße 7, 1080 Wien · 01 987 65 43 · hallo@jacopos-hundesalon.at
         </p>
       </footer>
     </main>
