@@ -1,4 +1,4 @@
-// editkit/edit-kit.tsx — pixelmeister EditKit
+// editkit/edit-kit.tsx — pixelheld EditKit
 // Aktiv nur im Editier-Modus (in der Vercel Sandbox). Liefert Hover- und
 // Auswahl-Highlight und meldet das angeklickte Element an den Portal-Editor.
 "use client";
@@ -21,14 +21,17 @@ function cssPath(element: Element): string {
 
 export function EditKit() {
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_PIXELMEISTER_EDIT_MODE !== "1") return;
+    if ((process.env.NEXT_PUBLIC_PIXELHELD_EDIT_MODE ?? process.env.NEXT_PUBLIC_PIXELMEISTER_EDIT_MODE) !== "1") return;
 
     // Portal-Origin per Handshake bestimmen (robust gegen localhost vs.
     // 127.0.0.1 vs. Preview-URL): Der Editor schickt nach dem Laden eine
     // "init"-Nachricht; deren origin merken wir uns als Ziel aller künftigen
     // postMessages. Fallback auf die Env-Variable, falls (noch) kein Handshake.
     let portalOrigin: string | null =
-      process.env.NEXT_PUBLIC_PIXELMEISTER_PORTAL_ORIGIN ?? null;
+      (process.env.NEXT_PUBLIC_PIXELHELD_PORTAL_ORIGIN ?? process.env.NEXT_PUBLIC_PIXELMEISTER_PORTAL_ORIGIN) ?? null;
+
+    let messageSource = process.env.NEXT_PUBLIC_PIXELHELD_EDIT_MODE === "1"
+      ? "pixelheld-editkit" : "pixelmeister-editkit";
 
     const hover = document.createElement("div");
     hover.style.cssText =
@@ -94,7 +97,7 @@ export function EditKit() {
       if (portalOrigin) {
         window.parent.postMessage(
           {
-            source: "pixelmeister-editkit",
+            source: messageSource,
             type: "element-selected",
             payload: {
               domPath: cssPath(el),
@@ -110,9 +113,10 @@ export function EditKit() {
 
     function onPortalMessage(event: MessageEvent) {
       const data = event.data;
-      if (data?.source !== "pixelmeister-editor") return;
+      if (!["pixelheld-editor", "pixelmeister-editor"].includes(data?.source)) return;
       if (data.type === "init") {
         portalOrigin = event.origin;
+        messageSource = data.source === "pixelheld-editor" ? "pixelheld-editkit" : "pixelmeister-editkit";
       } else if (data.type === "clear-selection") {
         selectedEl = null;
         refreshSelection();
@@ -131,7 +135,7 @@ export function EditKit() {
     window.addEventListener("resize", onScrollResize);
 
     // Inhaltsloser Ready-Ping → der Editor antwortet mit "init" (Handshake).
-    window.parent.postMessage({ source: "pixelmeister-editkit", type: "ready" }, "*");
+    window.parent.postMessage({ source: messageSource, type: "ready" }, "*");
 
     return () => {
       document.removeEventListener("mousemove", onMove, true);

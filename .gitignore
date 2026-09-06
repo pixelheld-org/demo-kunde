@@ -1,4 +1,8 @@
 node_modules/
 .next/
 
+.pixelheld/
+
+# Injected runner artifacts (including branches from before the rename)
+.pixelheld/
 .pixelmeister/

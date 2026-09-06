@@ -3,9 +3,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  if (process.env.PIXELMEISTER_EDIT_MODE !== "1") return NextResponse.next();
+  if ((process.env.PIXELHELD_EDIT_MODE ?? process.env.PIXELMEISTER_EDIT_MODE) !== "1") return NextResponse.next();
 
-  const expected = process.env.PIXELMEISTER_PREVIEW_TOKEN;
+  const expected = (process.env.PIXELHELD_PREVIEW_TOKEN ?? process.env.PIXELMEISTER_PREVIEW_TOKEN);
   if (!expected) return new NextResponse("Editiermodus falsch konfiguriert", { status: 500 });
 
   const queryToken = request.nextUrl.searchParams.get("pm_token");
