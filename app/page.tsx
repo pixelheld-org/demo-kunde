@@ -120,7 +120,7 @@ export default function Home() {
             }}
           >
             <span style={{ fontSize: 24 }}>🕘</span>
-            <p data-edit-id="hours" style={{ fontSize: 17, margin: 0, color: "#333" }}>{"E2E Zeiten Zwischenstand"}</p>
+            <p data-edit-id="hours" style={{ fontSize: 17, margin: 0, color: "#333" }}>{"E2E Zeiten sofort"}</p>
           </div>
         </div>
       </section>
