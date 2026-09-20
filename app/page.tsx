@@ -43,7 +43,7 @@ export default function Home() {
               margin: "0 0 20px",
               lineHeight: 1.1,
             }}
-          >{"E2E Titel Zwischenstand"}</h1>
+          >{"E2E Titel sofort"}</h1>
           <p
             data-edit-id="hero-subtitle"
             style={{
