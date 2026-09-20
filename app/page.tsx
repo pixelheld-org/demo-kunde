@@ -120,9 +120,7 @@ export default function Home() {
             }}
           >
             <span style={{ fontSize: 24 }}>🕘</span>
-            <p data-edit-id="hours" style={{ fontSize: 17, margin: 0, color: "#333" }}>
-              Di–Fr 9–18 Uhr, Sa 9–14 Uhr
-            </p>
+            <p data-edit-id="hours" style={{ fontSize: 17, margin: 0, color: "#333" }}>{"E2E Zeiten Zwischenstand"}</p>
           </div>
         </div>
       </section>
